@@ -1,3 +1,3 @@
-import ImageGrid from './ImageGrid';
+import ImageGrid from './ImageGrid'
 
-export default ImageGrid;
+export default ImageGrid

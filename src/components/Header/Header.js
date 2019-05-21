@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import './styles.css';
+import './styles.css'
 
-const Header = () => <header>What the Splash!</header>;
+const Header = () => <header>What the Splash!</header>
 
-export default Header;
+export default Header
