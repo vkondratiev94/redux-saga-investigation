@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import { loadImages } from '../../actions'
 import Button from '../Button'
+import Stats from '../Stats'
 
 import './styles.css'
 
@@ -13,7 +14,7 @@ class ImageGrid extends Component {
   }
 
   render() {
-    const { images, error, loadImages, isLoading } = this.props;
+    const { images, error, loadImages, isLoading, imageStats } = this.props;
     return (
       <div className="content">
         <section className="grid">
@@ -24,6 +25,7 @@ class ImageGrid extends Component {
                 image.height / image.width,
               )}`}
             >
+              <Stats stats={imageStats[image.id]} />
               <img
                 src={image.urls.small}
                 alt={image.user.username}
@@ -43,10 +45,11 @@ class ImageGrid extends Component {
   }
 }
 
-const mapStateToProps = ({ isLoading, images, error }) => ({
+const mapStateToProps = ({ isLoading, images, error, imageStats }) => ({
   isLoading,
   images,
-  error
+  error,
+  imageStats
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
